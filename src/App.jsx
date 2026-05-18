@@ -6,6 +6,7 @@ import Nosotros from './components/sections/Nosotros'
 import Proyectos from './components/sections/Proyectos'
 import CTABand from './components/sections/CTABand'
 import Footer from './components/sections/Footer'
+import FloatingVerticeAd from './components/common/FloatingVerticeAd'
 
 const WA_FLOAT = 'https://wa.me/573215594502?text=Hola%2C%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20construcción%20en%20Santander.'
 
@@ -27,6 +28,8 @@ export default function App() {
         <CTABand />
       </main>
       <Footer />
+
+      <FloatingVerticeAd />
 
       <a
         href={WA_FLOAT}
