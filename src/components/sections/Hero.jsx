@@ -84,7 +84,7 @@ export default function Hero() {
       <div className="hero__stats">
         <div className="container hero__stats-inner">
           <div className="hero__stat">
-            <span className="hero__stat-num">+50</span>
+            <span className="hero__stat-num">+35</span>
             <span className="hero__stat-label">Proyectos ejecutados</span>
           </div>
           <div className="hero__stat-sep" aria-hidden="true" />

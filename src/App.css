@@ -92,8 +92,9 @@
 }
 
 .navbar__logo {
-  height: 64px;
+  height: 88px;
   width: auto;
+  max-height: none;
   object-fit: contain;
   display: block;
 }
@@ -190,7 +191,7 @@
     width: 100%;
   }
   .navbar__nav .btn { margin-top: 24px; }
-  .navbar__logo { height: 52px; }
+  .navbar__logo { height: 60px; }
 }
 
 /* ── Section Shared ───────────────────────────── */
