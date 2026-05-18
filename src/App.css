@@ -695,46 +695,87 @@
   background: var(--white);
 }
 
-.proyectos__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.proyecto-card {
+.proyectos__list {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--gray-light);
-  border-radius: 2px;
-  overflow: hidden;
-  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
-}
-.proyecto-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 48px rgba(0,0,0,0.08);
+  margin-bottom: 0;
 }
 
+/* Card base */
+.proyecto-card {
+  display: flex;
+  flex-direction: row;
+  height: 420px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--gray-light);
+  background: var(--white);
+}
+
+.proyecto-card:last-child {
+  border-bottom: none;
+}
+
+/* Alternating: even cards invert image/body sides */
+.proyecto-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Image side */
 .proyecto-card__img-wrap {
+  flex: 3;
   position: relative;
-  aspect-ratio: 3/2;
-  background: var(--beige-light);
+  overflow: hidden;
+  background: var(--gray-light);
+}
+
+.proyecto-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s var(--ease);
+  display: block;
+}
+
+.proyecto-card:hover .proyecto-card__img {
+  transform: scale(1.04);
+}
+
+/* Directional edge fade blending image into body */
+.proyecto-card__img-edge {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(255,255,255,0.12) 100%);
+  pointer-events: none;
+}
+
+.proyecto-card:nth-child(even) .proyecto-card__img-edge {
+  background: linear-gradient(to left, transparent 60%, rgba(255,255,255,0.12) 100%);
+}
+
+/* Body side */
+.proyecto-card__body {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 52px;
+  background: var(--white);
+}
+
+/* Meta row: category + year */
+.proyecto-card__meta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  gap: 14px;
+  margin-bottom: 18px;
 }
 
-.proyecto-card__placeholder {
-  width: 70%;
-  opacity: 0.5;
-}
-.proyecto-card__placeholder svg { width: 100%; height: auto; }
-
-.proyecto-card__tipo {
-  position: absolute;
-  top: 14px;
-  left: 14px;
+.proyecto-card__cat {
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--black);
   background: var(--gold);
@@ -742,41 +783,102 @@
   border-radius: 1px;
 }
 
-.proyecto-card__info {
-  padding: 24px;
+.proyecto-card__year {
+  font-size: 12px;
+  color: var(--gray-mid);
+  letter-spacing: 0.08em;
 }
 
-.proyecto-card__name {
+/* Title */
+.proyecto-card__title {
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 500;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 400;
   color: var(--black);
-  margin-bottom: 6px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
 }
 
-.proyecto-card__loc {
+/* Description */
+.proyecto-card__desc {
   font-size: 13px;
   color: var(--gray-mid);
-  margin-bottom: 10px;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  max-width: 380px;
 }
 
-.proyecto-card__tag {
-  font-size: 12px;
-  color: var(--gold-dark);
+/* Highlight pills */
+.proyecto-card__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 22px;
+}
+
+.proyecto-card__hl {
+  font-size: 10px;
   font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  border: 1px solid var(--gray-light);
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+/* Location */
+.proyecto-card__loc {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--gray-mid);
   letter-spacing: 0.04em;
 }
 
+.proyecto-card__loc svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
+/* CTA */
 .proyectos__cta {
   margin-top: 56px;
   text-align: center;
 }
 
 @media (max-width: 900px) {
-  .proyectos__grid { grid-template-columns: 1fr 1fr; }
+  .proyecto-card,
+  .proyecto-card:nth-child(even) {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .proyecto-card__img-wrap {
+    flex: none;
+    height: 280px;
+  }
+
+  .proyecto-card__img-edge { display: none; }
+
+  .proyecto-card__body {
+    padding: 32px 36px;
+    justify-content: flex-start;
+  }
+
+  .proyecto-card__desc { max-width: 100%; }
 }
+
 @media (max-width: 540px) {
-  .proyectos__grid { grid-template-columns: 1fr; }
+  .proyecto-card__img-wrap { height: 220px; }
+
+  .proyecto-card__body { padding: 28px 24px; }
+
+  .proyecto-card__title { font-size: 22px; }
 }
 
 /* ── CTA Band ─────────────────────────────────── */
