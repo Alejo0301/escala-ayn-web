@@ -194,6 +194,44 @@
   .navbar__logo { height: 60px; }
 }
 
+/* ── WhatsApp Float ───────────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 90;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  text-decoration: none;
+}
+.wa-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.50);
+}
+.wa-float svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 540px) {
+  .wa-float {
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+  .wa-float svg { width: 22px; height: 22px; }
+}
+
 /* ── Section Shared ───────────────────────────── */
 .section {
   padding: 100px 0;
@@ -482,6 +520,16 @@
   .hero__stat-num { font-size: 24px; }
 }
 
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+  .cta-band { padding: 72px 0; }
+}
+
+@media (max-width: 540px) {
+  .section { padding: 56px 0; }
+  .cta-band { padding: 56px 0; }
+}
+
 /* ── Servicios ────────────────────────────────── */
 .servicios {
   background: var(--white);
@@ -760,7 +808,7 @@
   .nosotros__metrics { grid-template-columns: repeat(2, 1fr); }
   .nosotros__metric { padding: 20px 16px; }
   .nosotros__metric-num { font-size: 30px; }
-  .nosotros__diagram-col { display: none; }
+  .nosotros__diagram-img { aspect-ratio: 16 / 9; }
 }
 
 /* ── Proyectos ────────────────────────────────── */

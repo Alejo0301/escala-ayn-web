@@ -32,6 +32,7 @@ export default function Hero() {
             className="hero__bg-img"
             loading="eager"
             decoding="async"
+            fetchpriority="high"
           />
         </picture>
         <img

@@ -25,6 +25,7 @@ export default function Proyectos() {
                   className="proyecto-card__img"
                   loading="lazy"
                   decoding="async"
+                  sizes="(max-width: 900px) 100vw, 55vw"
                 />
                 <div className="proyecto-card__img-edge" aria-hidden="true" />
               </div>
