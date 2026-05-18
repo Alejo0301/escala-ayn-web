@@ -92,7 +92,7 @@
 }
 
 .navbar__logo {
-  height: 48px;
+  height: 64px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -190,6 +190,7 @@
     width: 100%;
   }
   .navbar__nav .btn { margin-top: 24px; }
+  .navbar__logo { height: 52px; }
 }
 
 /* ── Section Shared ───────────────────────────── */
@@ -722,28 +723,18 @@
   line-height: 1.65;
 }
 
-/* Columna de diagrama */
+/* Columna de imagen */
 .nosotros__diagram {
-  background: var(--white);
-  border: 1px solid var(--gray-light);
   border-radius: 2px;
   overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.12);
 }
 
-.nosotros__diagram svg {
+.nosotros__diagram-img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   display: block;
-}
-
-.nosotros__diagram-caption {
-  font-size: 10px;
-  color: var(--gray-mid);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 12px;
-  opacity: 0.7;
 }
 
 @media (max-width: 1024px) {
