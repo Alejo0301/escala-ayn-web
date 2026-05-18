@@ -1,6 +1,25 @@
+import { useEffect, useRef } from 'react'
 import { PROYECTOS } from '../../data/proyectos'
 
 export default function Proyectos() {
+  const listRef = useRef(null)
+
+  useEffect(() => {
+    const el = listRef.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add('proyectos__list--visible')
+          io.disconnect()
+        }
+      },
+      { threshold: 0.05 }
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
   return (
     <section id="proyectos" className="section proyectos">
       <div className="container">
@@ -14,7 +33,7 @@ export default function Proyectos() {
       </div>
 
       <div className="container">
-        <div className="proyectos__list">
+        <div className="proyectos__list" ref={listRef}>
           {PROYECTOS.map(p => (
             <article key={p.id} className="proyecto-card">
 

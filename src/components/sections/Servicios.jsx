@@ -1,20 +1,39 @@
+import { useEffect, useRef } from 'react'
 import { SERVICIOS } from '../../data/servicios'
 
 export default function Servicios() {
+  const gridRef = useRef(null)
+
+  useEffect(() => {
+    const el = gridRef.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add('servicios__grid--visible')
+          io.disconnect()
+        }
+      },
+      { threshold: 0.08 }
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
   return (
     <section id="servicios" className="section servicios">
       <div className="container">
 
         <div className="section__header">
           <span className="section__tag">— Servicios</span>
-          <h2 className="section__title">Ingeniería de principio a fin</h2>
+          <h2 className="section__title">Del espacio a la estructura.</h2>
           <p className="section__sub">
-            Dominio técnico en cada fase del ciclo constructivo,
-            desde el diseño estructural hasta la entrega final.
+            Concebimos, calculamos y construimos. Diseño arquitectónico y rigor estructural
+            coordinados desde la planificación espacial hasta la entrega final de obra.
           </p>
         </div>
 
-        <div className="servicios__grid">
+        <div className="servicios__grid" ref={gridRef}>
           {SERVICIOS.map(s => (
             <div key={s.num} className="servicio-card">
 

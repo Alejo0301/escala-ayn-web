@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import palmaireHouse01 from '../../assets/projects/palmaire/palmaire-house-01.JPG'
 
 const METRICS = [
@@ -13,8 +14,8 @@ const PILLARS = [
     desc:  'Fundada el 26 de julio de 2022 en San Gil. Operamos con proyección regional en Santander.',
   },
   {
-    title: 'Equipo técnico calificado',
-    desc:  'Ingenieros civiles, técnicos de obra y personal calificado con experiencia en proyectos de mediana y alta complejidad.',
+    title: 'Equipo interdisciplinario',
+    desc:  'Arquitectos, ingenieros civiles, técnicos de obra y personal calificado con experiencia en proyectos de mediana y alta complejidad.',
   },
   {
     title: 'Capacidad operativa real',
@@ -23,6 +24,24 @@ const PILLARS = [
 ]
 
 export default function Nosotros() {
+  const metricsRef = useRef(null)
+
+  useEffect(() => {
+    const el = metricsRef.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add('nosotros__metrics--visible')
+          io.disconnect()
+        }
+      },
+      { threshold: 0.2 }
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
   return (
     <section id="nosotros" className="section nosotros">
       <div className="container">
@@ -31,13 +50,13 @@ export default function Nosotros() {
         <div className="nosotros__header">
           <span className="section__tag">— Quiénes somos</span>
           <h2 className="section__title nosotros__title">
-            Técnica aplicada,<br />
+            Arquitectura y técnica,<br />
             <em>resultados que se ven.</em>
           </h2>
         </div>
 
         {/* ── Franja de métricas ── */}
-        <div className="nosotros__metrics" aria-label="Datos clave">
+        <div className="nosotros__metrics" ref={metricsRef} aria-label="Datos clave">
           {METRICS.map((m, i) => (
             <div key={i} className="nosotros__metric">
               <span className="nosotros__metric-num">{m.num}</span>
@@ -47,21 +66,22 @@ export default function Nosotros() {
           ))}
         </div>
 
-        {/* ── Cuerpo: texto + diagrama ── */}
+        {/* ── Cuerpo: texto + imagen ── */}
         <div className="nosotros__body">
 
           <div className="nosotros__text-col">
             <p className="nosotros__text">
               Escala AYN Constructora S.A.S. es una empresa sangileña fundada el 26 de julio
-              de 2022 con el propósito de elevar los estándares técnicos en la construcción
-              de Santander. Operamos desde San Gil con proyección regional en vivienda
+              de 2022 con el propósito de elevar los estándares de diseño y construcción
+              en Santander. Operamos desde San Gil con proyección regional en vivienda
               unifamiliar, multifamiliar, condominios y proyectos privados.
             </p>
             <p className="nosotros__text">
-              Integramos ingenieros civiles, técnicos de obra y personal calificado con
-              capacidad para movilizar hasta 60 personas en proyectos simultáneos. Combinamos
-              rigor estructural con herramientas BIM para garantizar eficiencia, trazabilidad
-              y cumplimiento en cada entrega.
+              Nuestro equipo integra arquitectos, ingenieros civiles, técnicos de obra
+              y personal calificado, con capacidad de movilizar hasta 60 personas en
+              proyectos simultáneos. Coordinamos arquitectura e ingeniería como una sola
+              disciplina, apoyados en herramientas BIM para garantizar eficiencia,
+              trazabilidad y cumplimiento en cada etapa.
             </p>
 
             <div className="nosotros__pillars">

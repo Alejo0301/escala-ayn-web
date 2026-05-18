@@ -3,7 +3,7 @@ import heroMainImg   from '../../assets/hero/hero-main.jpeg'
 import heroMobileImg from '../../assets/hero/hero-mobile.JPG'
 import heroOverlay   from '../../assets/hero/hero-overlay.JPG'
 
-const BADGES = ['Construcción', 'Diseño estructural', 'Licencias', 'BIM', 'Interventoría']
+const BADGES = ['Arquitectura · Estructura', 'Construcción', 'Licencias', 'BIM', 'Interventoría']
 
 export default function Hero() {
   const heroRef = useRef(null)
@@ -55,17 +55,17 @@ export default function Hero() {
       {/* ── Contenido principal ── */}
       <div className="container hero__inner">
         <div className="hero__content">
-          <p className="hero__eyebrow">San Gil · Santander · Est. 2020</p>
+          <p className="hero__eyebrow">San Gil · Santander · Est. 2022</p>
 
           <h1 className="hero__title">
-            Construimos proyectos<br />
+            Arquitectura e ingeniería<br />
             <em>con rigor técnico</em><br />
             y visión de futuro.
           </h1>
 
           <p className="hero__sub">
-            Diseño, construcción y gestión integral de proyectos
-            residenciales y multifamiliares en San Gil y Santander.
+            Diseño arquitectónico, ingeniería estructural y construcción integral
+            de proyectos residenciales y multifamiliares en San Gil y Santander.
           </p>
 
           <div className="hero__badges" aria-label="Servicios">
@@ -90,7 +90,7 @@ export default function Hero() {
           </div>
           <div className="hero__stat-sep" aria-hidden="true" />
           <div className="hero__stat">
-            <span className="hero__stat-num">+5</span>
+            <span className="hero__stat-num">+4</span>
             <span className="hero__stat-label">Años de experiencia</span>
           </div>
           <div className="hero__stat-sep" aria-hidden="true" />

@@ -2,6 +2,8 @@
    ESCALA AYN — Component Styles
    ============================================= */
 
+html { scroll-behavior: smooth; }
+
 /* ── Buttons ──────────────────────────────────── */
 .btn {
   display: inline-flex;
@@ -222,6 +224,27 @@
   flex-shrink: 0;
 }
 
+.wa-float::after {
+  content: '¿Hablamos?';
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10,10,10,0.85);
+  color: rgba(255,255,255,0.85);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.wa-float:hover::after { opacity: 1; }
+
 @media (max-width: 540px) {
   .wa-float {
     bottom: 20px;
@@ -230,6 +253,7 @@
     height: 48px;
   }
   .wa-float svg { width: 22px; height: 22px; }
+  .wa-float::after { display: none; }
 }
 
 /* ── Section Shared ───────────────────────────── */
@@ -550,7 +574,13 @@
   flex-direction: column;
   position: relative;
   border-left: 3px solid transparent;
-  transition: background 0.22s var(--ease), border-left-color 0.22s var(--ease);
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    background 0.22s var(--ease),
+    border-left-color 0.22s var(--ease),
+    opacity 0.55s var(--ease),
+    transform 0.55s var(--ease);
 }
 
 .servicio-card:hover {
@@ -653,6 +683,13 @@
   .servicio-card__title { font-size: 20px; }
 }
 
+.servicios__grid--visible .servicio-card                { opacity: 1; transform: translateY(0); }
+.servicios__grid--visible .servicio-card:nth-child(2)   { transition-delay: 80ms; }
+.servicios__grid--visible .servicio-card:nth-child(3)   { transition-delay: 160ms; }
+.servicios__grid--visible .servicio-card:nth-child(4)   { transition-delay: 80ms; }
+.servicios__grid--visible .servicio-card:nth-child(5)   { transition-delay: 160ms; }
+.servicios__grid--visible .servicio-card:nth-child(6)   { transition-delay: 240ms; }
+
 /* ── Nosotros ─────────────────────────────────── */
 .nosotros {
   background: var(--beige-light);
@@ -688,6 +725,9 @@
   gap: 4px;
   padding: 28px 24px;
   border-right: 1px solid rgba(0,0,0,0.09);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
 }
 
 .nosotros__metric:last-child {
@@ -715,6 +755,11 @@
   color: var(--gray-mid);
   letter-spacing: 0.04em;
 }
+
+.nosotros__metrics--visible .nosotros__metric                { opacity: 1; transform: translateY(0); }
+.nosotros__metrics--visible .nosotros__metric:nth-child(2)   { transition-delay: 80ms; }
+.nosotros__metrics--visible .nosotros__metric:nth-child(3)   { transition-delay: 160ms; }
+.nosotros__metrics--visible .nosotros__metric:nth-child(4)   { transition-delay: 240ms; }
 
 /* Cuerpo: texto + diagrama */
 .nosotros__body {
@@ -831,6 +876,9 @@
   overflow: hidden;
   border-bottom: 1px solid var(--gray-light);
   background: var(--white);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
 .proyecto-card:last-child {
@@ -1002,6 +1050,12 @@
   .proyecto-card__title { font-size: 22px; }
 }
 
+.proyectos__list--visible .proyecto-card                { opacity: 1; transform: translateY(0); }
+.proyectos__list--visible .proyecto-card:nth-child(2)   { transition-delay: 120ms; }
+.proyectos__list--visible .proyecto-card:nth-child(3)   { transition-delay: 240ms; }
+.proyectos__list--visible .proyecto-card:nth-child(4)   { transition-delay: 120ms; }
+.proyectos__list--visible .proyecto-card:nth-child(5)   { transition-delay: 240ms; }
+
 /* ── CTA Band ─────────────────────────────────── */
 .cta-band {
   background: var(--black);
@@ -1151,8 +1205,8 @@
 }
 
 .footer__logo {
-  width: 52px;
-  height: auto;
+  height: 48px;
+  width: auto;
   object-fit: contain;
   opacity: 0.85;
 }
@@ -1253,4 +1307,22 @@
 
 @media (max-width: 480px) {
   .footer__inner { grid-template-columns: 1fr; }
+}
+
+/* ── Accesibilidad: sin animaciones ──────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .servicio-card,
+  .nosotros__metric,
+  .proyecto-card {
+    opacity: 1;
+    transform: none;
+    transition:
+      background 0.22s var(--ease),
+      border-left-color 0.22s var(--ease);
+  }
+  .hero__content {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

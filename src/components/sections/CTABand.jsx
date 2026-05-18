@@ -17,8 +17,8 @@ export default function CTABand() {
           </h2>
           <p className="cta-band__sub">
             Atendemos en San Gil y toda la región de Santander.
-            Cuéntanos tu idea — nuestro equipo evalúa la viabilidad técnica
-            sin costo y sin compromiso.
+            Cuéntanos tu idea — nuestro equipo de arquitectos e ingenieros
+            evalúa viabilidad, diseño y presupuesto sin costo y sin compromiso.
           </p>
         </div>
 
