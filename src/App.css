@@ -557,6 +557,8 @@ html { scroll-behavior: smooth; }
 /* ── Servicios ────────────────────────────────── */
 .servicios {
   background: #F8F7F5;
+  background-image: radial-gradient(circle, rgba(212,175,55,0.10) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 .servicios__grid {
@@ -713,6 +715,67 @@ html { scroll-behavior: smooth; }
 .servicio-card:hover .servicio-card__tag {
   border-color: rgba(212,175,55,0.35);
   color: var(--gold);
+}
+
+/* Secondary card — jerarquía editorial nivel 2 */
+.servicio-card--secondary {
+  background: #F4EFE4;
+  border-top: 1px solid rgba(212,175,55,0.28);
+}
+
+.servicio-card--secondary:hover {
+  background: #EAE2D0;
+}
+
+/* Featured card — ancla editorial de la sección */
+.servicio-card--featured {
+  background: var(--black);
+}
+
+.servicio-card--featured .servicio-card__num {
+  color: rgba(212,175,55,0.75);
+}
+
+.servicio-card--featured .servicio-card__title {
+  color: var(--white);
+}
+
+.servicio-card--featured .servicio-card__desc {
+  color: rgba(255,255,255,0.55);
+}
+
+.servicio-card--featured .servicio-card__divider {
+  background: rgba(255,255,255,0.1);
+}
+
+.servicio-card--featured .servicio-card__icon {
+  background: rgba(212,175,55,0.14);
+}
+
+.servicio-card--featured .servicio-card__tag {
+  color: rgba(255,255,255,0.45);
+  border-color: rgba(255,255,255,0.14);
+}
+
+.servicio-card--featured .servicio-card__watermark {
+  color: rgba(212,175,55,0.1);
+}
+
+.servicio-card--featured:hover {
+  background: #1a1a1a;
+}
+
+.servicio-card--featured:hover .servicio-card__divider {
+  background: rgba(212,175,55,0.2);
+}
+
+.servicio-card--featured:hover .servicio-card__tag {
+  border-color: rgba(212,175,55,0.35);
+  color: var(--gold);
+}
+
+.servicio-card--featured:hover .servicio-card__watermark {
+  color: rgba(212,175,55,0.18);
 }
 
 @media (max-width: 900px) {

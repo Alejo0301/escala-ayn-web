@@ -35,7 +35,7 @@ export default function Servicios() {
 
         <div className="servicios__grid" ref={gridRef}>
           {SERVICIOS.map(s => (
-            <div key={s.num} className="servicio-card">
+            <div key={s.num} className={`servicio-card${s.num === '01' ? ' servicio-card--featured' : s.num === '02' ? ' servicio-card--secondary' : ''}`}>
               <span className="servicio-card__watermark" aria-hidden="true">{s.num}</span>
 
               <div className="servicio-card__header">
