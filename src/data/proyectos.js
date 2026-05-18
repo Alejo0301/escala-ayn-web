@@ -39,7 +39,7 @@ export const PROYECTOS = [
   {
     id: 'esc1',
     title: 'ESC-1 Vivienda Multifamiliar',
-    location: 'Bucaramanga, Santander',
+    location: 'San Gil, Santander',
     year: '2023',
     category: 'Multifamiliar',
     desc: 'Proyecto de vivienda multifamiliar con diseño estructural sismorresistente conforme a NSR-10. Integración de modelado BIM para coordinación multidisciplinaria y control de obra.',
@@ -50,7 +50,7 @@ export const PROYECTOS = [
   {
     id: 'casa81',
     title: 'Casa 81 Balcones Bella Isla',
-    location: 'Floridablanca, Santander',
+    location: 'San Gil, Santander',
     year: '2023',
     category: 'Residencial',
     desc: 'Vivienda unifamiliar de alto estándar en el conjunto Balcones Bella Isla. Diseño estructural, licencia de construcción y ejecución de obra con acabados de detalle.',
@@ -61,7 +61,7 @@ export const PROYECTOS = [
   {
     id: 'montereal',
     title: 'Edificio MonteReal',
-    location: 'Bucaramanga, Santander',
+    location: 'San Gil, Santander',
     year: '2024',
     category: 'Multifamiliar',
     desc: 'Edificio multifamiliar de mediana altura con gestión integral desde el diseño estructural hasta la entrega. Supervisión técnica permanente y control de calidad en cada etapa constructiva.',
@@ -83,7 +83,7 @@ export const PROYECTOS = [
   {
     id: 'palmaire',
     title: 'Palmaire Condominio',
-    location: 'Santander',
+    location: 'San Gil, Santander',
     year: '2024',
     category: 'Condominio',
     desc: 'Condominio residencial con énfasis en espacios sociales y calidad de vida. Gestión BIM, coordinación estructural y acompañamiento técnico durante todo el ciclo del proyecto.',

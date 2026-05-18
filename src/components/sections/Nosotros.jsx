@@ -1,7 +1,7 @@
 const METRICS = [
   { num: '2022',  label: 'Año de fundación',    sub: 'San Gil, Santander' },
   { num: '+60',   label: 'Personas en obra',     sub: 'Capacidad operativa' },
-  { num: '+50',   label: 'Proyectos ejecutados', sub: 'Residencial y privado' },
+  { num: '+35',   label: 'Proyectos ejecutados', sub: 'Residencial y privado' },
   { num: '6',     label: 'Líneas de servicio',   sub: 'Ciclo constructivo integral' },
 ]
 

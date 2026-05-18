@@ -1,5 +1,5 @@
 const WA_URL =
-  'https://wa.me/573158371235?text=Hola%2C%20me%20interesa%20recibir%20información%20sobre%20sus%20servicios%20de%20construcción%20en%20Santander.'
+  'https://wa.me/573215594502?text=Hola%2C%20me%20interesa%20recibir%20información%20sobre%20sus%20servicios%20de%20construcción%20en%20Santander.'
 
 export default function CTABand() {
   return (

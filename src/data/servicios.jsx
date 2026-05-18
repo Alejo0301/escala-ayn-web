@@ -15,14 +15,15 @@ export const SERVICIOS = [
   },
   {
     num: '02',
-    title: 'Diseño Estructural',
-    desc: 'Modelado y cálculo de sistemas estructurales con análisis sísmico conforme a NSR-10. Memorias de cálculo, planos estructurales y especificaciones técnicas para cimentación, columnas y losas.',
-    tags: ['NSR-10', 'ETABS · SAP2000', 'Planos estructurales'],
+    title: 'Diseño Arquitectónico y Estructural',
+    desc: 'Desarrollo arquitectónico integral: planificación espacial, distribución funcional y coordinación con el sistema estructural. Cálculo sismorresistente conforme a NSR-10, memorias de cálculo y planos de detalle para cimentación, columnas y losas.',
+    tags: ['NSR-10', 'Arquitectura · Estructura', 'ETABS · SAP2000'],
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M8 32V12M20 32V8M32 32V16" />
-        <path d="M6 32h28" />
-        <path d="M8 20h12M20 14h12" />
+        <rect x="7" y="24" width="26" height="10" rx="1" />
+        <path d="M7 24L20 10l13 14" />
+        <path d="M16 24v10M24 24v10" />
+        <path d="M13 17h14" strokeDasharray="2 2" />
       </svg>
     ),
   },
