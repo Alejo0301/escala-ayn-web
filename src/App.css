@@ -88,26 +88,14 @@
 .navbar__brand {
   display: flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
 }
 
 .navbar__logo {
-  width: 40px;
-  height: 40px;
+  height: 38px;
+  width: auto;
   object-fit: contain;
-}
-
-.navbar__name {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--black);
-  letter-spacing: 0.04em;
-}
-.navbar__name em {
-  font-style: normal;
-  color: var(--gold);
+  display: block;
 }
 
 .navbar__nav {

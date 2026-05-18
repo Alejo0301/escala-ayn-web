@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import heroImg from '../../assets/hero.png'
+import logoPrimary from '../../assets/branding/logo-primary.png'
 
 const links = [
   { label: 'Servicios', href: '#servicios' },
@@ -22,8 +22,7 @@ export default function Navbar() {
     <header className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         <a href="#" className="navbar__brand">
-          <img src={heroImg} alt="Escala AYN" className="navbar__logo" />
-          <span className="navbar__name">Escala <em>AYN</em></span>
+          <img src={logoPrimary} alt="Escala AYN Constructora" className="navbar__logo" />
         </a>
 
         <nav className={`navbar__nav${menuOpen ? ' navbar__nav--open' : ''}`}>
