@@ -2,7 +2,8 @@ export const SERVICIOS = [
   {
     num: '01',
     title: 'Construcción',
-    desc: 'Ejecución de obras residenciales, comerciales e industriales con estándares técnicos rigurosos y control de calidad en cada etapa.',
+    desc: 'Ejecución de obra civil con coordinación de frentes de obra, control de materiales y cronogramas de avance. Proyectos residenciales, multifamiliares y de uso mixto con rigor técnico en cada etapa.',
+    tags: ['NSR-10', 'Control de calidad', 'Obra civil'],
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="6" y="20" width="28" height="14" rx="1" />
@@ -15,7 +16,8 @@ export const SERVICIOS = [
   {
     num: '02',
     title: 'Diseño Estructural',
-    desc: 'Cálculo y diseño de sistemas estructurales con análisis sismorresistente conforme a la NSR-10.',
+    desc: 'Modelado y cálculo de sistemas estructurales con análisis sísmico conforme a NSR-10. Memorias de cálculo, planos estructurales y especificaciones técnicas para cimentación, columnas y losas.',
+    tags: ['NSR-10', 'ETABS · SAP2000', 'Planos estructurales'],
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M8 32V12M20 32V8M32 32V16" />
@@ -26,8 +28,9 @@ export const SERVICIOS = [
   },
   {
     num: '03',
-    title: 'Licencias',
-    desc: 'Gestión integral de licencias de construcción, urbanismo y permisos ante las curadurías urbanas de Santander.',
+    title: 'Licencias de Construcción',
+    desc: 'Trámite y gestión de licencias de construcción, urbanización y subdivisión ante curadurías urbanas de Santander. Radicación de planos, resoluciones y permisos de ocupación.',
+    tags: ['Curaduría urbana', 'POT Santander', 'Normativa urbana'],
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="8" y="6" width="24" height="30" rx="1" />
@@ -39,7 +42,8 @@ export const SERVICIOS = [
   {
     num: '04',
     title: 'Remodelaciones',
-    desc: 'Intervención, adecuación y modernización de espacios existentes con enfoque funcional y estético.',
+    desc: 'Diagnóstico, reforzamiento y adecuación de estructuras existentes. Intervención técnica para cambios de uso, ampliaciones y modernización de inmuebles residenciales y comerciales.',
+    tags: ['Reforzamiento', 'Adecuación', 'Cambio de uso'],
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M10 30L28 12" strokeLinecap="round" />
@@ -52,7 +56,8 @@ export const SERVICIOS = [
   {
     num: '05',
     title: 'Interventoría',
-    desc: 'Supervisión técnica, administrativa y financiera de proyectos para garantizar cumplimiento de especificaciones y cronogramas.',
+    desc: 'Control técnico, administrativo y financiero de proyectos de construcción. Verificación de especificaciones, avance de obra, calidad de materiales y cumplimiento contractual en cada fase.',
+    tags: ['Control de obra', 'Especificaciones', 'Cronograma'],
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="20" cy="20" r="13" />
@@ -64,7 +69,8 @@ export const SERVICIOS = [
   {
     num: '06',
     title: 'BIM & Consultoría',
-    desc: 'Modelado digital en 3D/5D con Revit y Navisworks para optimizar costos, tiempos y coordinación multidisciplinaria.',
+    desc: 'Modelado paramétrico en Revit y coordinación BIM para detección de interferencias, cuantificación de materiales y simulación de obra. Implementación de flujos digitales conforme a estándar ISO 19650.',
+    tags: ['Revit · Navisworks', 'ISO 19650', '3D / 5D'],
     icon: (
       <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M20 6l14 8v12L20 34 6 26V14z" />
