@@ -36,6 +36,7 @@ export default function Servicios() {
         <div className="servicios__grid" ref={gridRef}>
           {SERVICIOS.map(s => (
             <div key={s.num} className="servicio-card">
+              <span className="servicio-card__watermark" aria-hidden="true">{s.num}</span>
 
               <div className="servicio-card__header">
                 <span className="servicio-card__num">{s.num}</span>

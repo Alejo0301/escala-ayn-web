@@ -556,15 +556,13 @@ html { scroll-behavior: smooth; }
 
 /* ── Servicios ────────────────────────────────── */
 .servicios {
-  background: var(--white);
+  background: #F8F7F5;
 }
 
 .servicios__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--gray-light);
-  border: 1px solid var(--gray-light);
+  gap: 16px;
 }
 
 .servicio-card {
@@ -573,19 +571,56 @@ html { scroll-behavior: smooth; }
   display: flex;
   flex-direction: column;
   position: relative;
-  border-left: 3px solid transparent;
+  overflow: hidden;
   opacity: 0;
   transform: translateY(20px);
   transition:
-    background 0.22s var(--ease),
-    border-left-color 0.22s var(--ease),
-    opacity 0.55s var(--ease),
-    transform 0.55s var(--ease);
+    background 0.28s var(--ease),
+    box-shadow 0.28s var(--ease),
+    transform 0.55s var(--ease),
+    opacity 0.55s var(--ease);
+}
+
+/* Gold line — grows upward on hover */
+.servicio-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 300ms var(--ease);
 }
 
 .servicio-card:hover {
   background: var(--beige-light);
-  border-left-color: var(--gold);
+}
+
+.servicio-card:hover::before {
+  transform: scaleY(1);
+}
+
+/* Number watermark */
+.servicio-card__watermark {
+  position: absolute;
+  right: 14px;
+  bottom: -10px;
+  font-family: var(--font-display);
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(212,175,55,0.07);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.02em;
+  transition: color 0.28s;
+}
+
+.servicio-card:hover .servicio-card__watermark {
+  color: rgba(212,175,55,0.14);
 }
 
 /* Header row: number left, icon right */
@@ -608,15 +643,22 @@ html { scroll-behavior: smooth; }
 }
 
 .servicio-card__icon {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
   color: var(--gold);
   flex-shrink: 0;
-  opacity: 0.85;
-  transition: opacity 0.2s;
+  background: rgba(212,175,55,0.07);
+  border-radius: 4px;
+  opacity: 0.9;
+  transition: background 0.22s, opacity 0.2s, transform 0.22s;
 }
 .servicio-card__icon svg { width: 100%; height: 100%; }
-.servicio-card:hover .servicio-card__icon { opacity: 1; }
+.servicio-card:hover .servicio-card__icon {
+  background: rgba(212,175,55,0.15);
+  opacity: 1;
+  transform: scale(1.08);
+}
 
 /* Thin separator under header */
 .servicio-card__divider {
@@ -669,8 +711,8 @@ html { scroll-behavior: smooth; }
   transition: border-color 0.2s, color 0.2s;
 }
 .servicio-card:hover .servicio-card__tag {
-  border-color: rgba(212,175,55,0.3);
-  color: var(--gray-dark);
+  border-color: rgba(212,175,55,0.35);
+  color: var(--gold);
 }
 
 @media (max-width: 900px) {
@@ -678,7 +720,7 @@ html { scroll-behavior: smooth; }
 }
 
 @media (max-width: 540px) {
-  .servicios__grid { grid-template-columns: 1fr; }
+  .servicios__grid { grid-template-columns: 1fr; gap: 12px; }
   .servicio-card { padding: 28px 24px 24px; }
   .servicio-card__title { font-size: 20px; }
 }
@@ -689,6 +731,12 @@ html { scroll-behavior: smooth; }
 .servicios__grid--visible .servicio-card:nth-child(4)   { transition-delay: 80ms; }
 .servicios__grid--visible .servicio-card:nth-child(5)   { transition-delay: 160ms; }
 .servicios__grid--visible .servicio-card:nth-child(6)   { transition-delay: 240ms; }
+
+/* Hover lift needs higher specificity to override stagger transform */
+.servicios__grid--visible .servicio-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+}
 
 /* ── Nosotros ─────────────────────────────────── */
 .nosotros {
