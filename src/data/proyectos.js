@@ -27,6 +27,9 @@ import glampingExt02   from '../assets/projects/glamping-curiti/glamping-exterio
 import glampingNight01 from '../assets/projects/glamping-curiti/glamping-night-01.jpg'
 import glampingPisc01  from '../assets/projects/glamping-curiti/glamping-piscina-01.jpg'
 
+// ── VÉRTICE ────────────────────────────────────────
+import verticeCover    from '../assets/projects/vertice/lanzamiento_vertice.jpg'
+
 // ── PALMAIRE ───────────────────────────────────────
 import palmaireCover   from '../assets/projects/palmaire/palmaire-cover.JPG'
 import palmaireHouse01 from '../assets/projects/palmaire/palmaire-house-01.JPG'
@@ -79,6 +82,18 @@ export const PROYECTOS = [
     highlights: ['Diseño estructural', 'Construcción', 'Licencias'],
     cover: glampingCover,
     gallery: [glampingExt01, glampingExt02, glampingNight01, glampingPisc01],
+  },
+  {
+    id: 'vertice',
+    title: 'Vértice',
+    location: 'San Gil, Santander',
+    year: '2025',
+    category: 'Multifamiliar',
+    desc: 'Proyecto residencial multifamiliar de 4 niveles con 6 apartamentos y terraza BBQ compartida. En preventa en el corazón de San Gil — diseño contemporáneo con acabados de alto estándar.',
+    highlights: ['Diseño arquitectónico', 'BIM', 'Preventa'],
+    cover: verticeCover,
+    gallery: [verticeCover],
+    nuevo: true,
   },
   {
     id: 'palmaire',

@@ -47,6 +47,9 @@ export default function Proyectos() {
                   sizes="(max-width: 900px) 100vw, 55vw"
                 />
                 <div className="proyecto-card__img-edge" aria-hidden="true" />
+                {p.nuevo && (
+                  <span className="proyecto-card__nuevo">Nuevo</span>
+                )}
               </div>
 
               <div className="proyecto-card__body">

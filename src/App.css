@@ -1166,6 +1166,23 @@ html { scroll-behavior: smooth; }
 .proyectos__list--visible .proyecto-card:nth-child(3)   { transition-delay: 240ms; }
 .proyectos__list--visible .proyecto-card:nth-child(4)   { transition-delay: 120ms; }
 .proyectos__list--visible .proyecto-card:nth-child(5)   { transition-delay: 240ms; }
+.proyectos__list--visible .proyecto-card:nth-child(6)   { transition-delay: 360ms; }
+
+.proyecto-card__nuevo {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 4px 10px;
+  border-radius: 1px;
+}
 
 /* ── CTA Band ─────────────────────────────────── */
 .cta-band {
@@ -1579,30 +1596,34 @@ html { scroll-behavior: smooth; }
 
 @media (max-width: 540px) {
   .vertice-ad {
-    width: calc(100vw - 32px);
-    right: 16px;
-    bottom: 88px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    bottom: 20px;
     flex-direction: row;
-    height: 96px;
+    align-items: stretch;
   }
 
   .vertice-ad__image {
-    width: 96px;
-    height: 100%;
+    width: 110px;
+    height: auto;
+    min-height: 110px;
     flex-shrink: 0;
   }
 
   .vertice-ad__body {
-    gap: 1px;
-    padding: 10px 12px 10px;
+    flex: 1;
+    gap: 3px;
+    padding: 12px 14px;
     border-top: none;
     border-left: 2px solid var(--gold);
     justify-content: center;
   }
 
-  .vertice-ad__name { font-size: 20px; }
+  .vertice-ad__name    { font-size: 22px; }
   .vertice-ad__details { display: none; }
-  .vertice-ad__cta { margin-top: 6px; }
+  .vertice-ad__price   { margin-top: 2px; }
+  .vertice-ad__cta     { margin-top: 6px; }
 }
 
 /* ── Accesibilidad: sin animaciones ──────────────── */

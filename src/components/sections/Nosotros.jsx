@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import palmaireHouse01 from '../../assets/projects/palmaire/palmaire-house-01.JPG'
 
 const METRICS = [
-  { num: '2022',  label: 'Año de fundación',    sub: 'San Gil, Santander' },
+  { num: '2020',  label: 'Construyendo desde',  sub: 'San Gil, Santander' },
   { num: '+60',   label: 'Personas en obra',     sub: 'Capacidad operativa' },
   { num: '+35',   label: 'Proyectos ejecutados', sub: 'Residencial y privado' },
   { num: '6',     label: 'Líneas de servicio',   sub: 'Ciclo constructivo integral' },
@@ -11,7 +11,7 @@ const METRICS = [
 const PILLARS = [
   {
     title: 'Empresa sangileña',
-    desc:  'Fundada el 26 de julio de 2022 en San Gil. Operamos con proyección regional en Santander.',
+    desc:  'Construyendo desde 2020 en San Gil, con proyección regional en Santander.',
   },
   {
     title: 'Equipo interdisciplinario',
@@ -71,8 +71,8 @@ export default function Nosotros() {
 
           <div className="nosotros__text-col">
             <p className="nosotros__text">
-              Escala AYN Constructora S.A.S. es una empresa sangileña fundada el 26 de julio
-              de 2022 con el propósito de elevar los estándares de diseño y construcción
+              Escala AYN Constructora S.A.S. es una empresa sangileña que construye desde
+              2020 con el propósito de elevar los estándares de diseño y construcción
               en Santander. Operamos desde San Gil con proyección regional en vivienda
               unifamiliar, multifamiliar, condominios y proyectos privados.
             </p>

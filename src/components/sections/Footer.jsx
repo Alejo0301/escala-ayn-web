@@ -41,7 +41,7 @@ export default function Footer() {
             Construimos proyectos con criterio técnico,
             precisión y visión de futuro.
           </p>
-          <p className="footer__location">San Gil, Santander · Est. 2022</p>
+          <p className="footer__location">San Gil, Santander · Est. 2020</p>
         </div>
 
         {/* ── Servicios ── */}

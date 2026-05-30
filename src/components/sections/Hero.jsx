@@ -55,7 +55,7 @@ export default function Hero() {
       {/* ── Contenido principal ── */}
       <div className="container hero__inner">
         <div className="hero__content">
-          <p className="hero__eyebrow">San Gil · Santander · Est. 2022</p>
+          <p className="hero__eyebrow">San Gil · Santander · Est. 2020</p>
 
           <h1 className="hero__title">
             Arquitectura e ingeniería<br />
